@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loginbox">
+        <h1>Login</h1>
+        <form class="login" onsubmit="return validateForm()">
+            <input type="email" placeholder="Username" name="username" id="username">
+            <div id="Email-error">Please enter a valid email</div>
+            <input type="password" placeholder="Password" name="password" id="password">
+            <div id="Password-error">Please enter a correct password</div>
+            <button type="submit" onclick="checkData()" href="jason.png">Login</button>
+            <footer><p class="no-account">Not having an account?<a href="sign.html"> Signup here</a></p></footer>      
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var emailError = document.getElementById('Email-error');
+            var passwordError = document.getElementById('Password-error');
+
+            // Reset error messages
+            emailError.style.display = 'none';
+            passwordError.style.display = 'none';
+
+            // Validate username
+            if (username.trim() === '') {
+                emailError.style.display = 'block';
+                return false;
+            }
+
+            // Validate password
+            if (password.trim() === '') {
+                passwordError.style.display = 'block';
+                return false;
+            }
+
+            // If both fields are filled, allow form submission
+            return true;
+
+        function checkData(){
+            var username = document.getElementById('useremail').value;
+            var password = document.getElementById('password').value;
+
+            var getemail=localStorage.getItem('username');
+            var getpass=localStorage.getItem('userpass')
+
+            if(username==getemail)
+            {
+               if(password==getpass)
+               {
+                alert("Login Successfully")
+               }
+               else
+               {
+                alert('Invalid details')
+               }
+            }
+
+
+        }
+        }
+    
+    
+    </script>
+</body>
+</html>

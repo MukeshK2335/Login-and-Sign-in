@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sign-box">
+        <h1>Sign Up</h1>
+        <form onsubmit="return validateForm()">
+            <input type="text" placeholder="First name" id="firstName">
+            <input type="text" placeholder="Last name" id="lastName">
+            <input type="email" placeholder="Email" id="email" autocomplete="email">
+            <input type="number" placeholder="Phone number" id="phoneNumber">
+            <input type="password" placeholder="Password" id="password">
+            <input type="password" placeholder="Confirm password" id="confirmPassword">
+            <div id="passwordMatchError" style="display:none; color:red;">Passwords do not match</div>
+            <button type="submit" onclick="addData()" href="jason.png">Sign up</button>
+            
+            <footer>
+                <p class="Policy">
+                    By clicking the sign-up button, you agree to our
+                    <a href="#">Terms and Condition</a> and
+                    <a href="#">Policy</a>
+                </p>
+                <p class="Log">Already have an account?<a href="index.html"> Login</a></p>
+            </footer>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var passwordMatchError = document.getElementById('passwordMatchError');
+
+            // Reset error message
+            passwordMatchError.style.display = 'none';
+
+            // Validate required fields
+            if (firstName.trim() === '' || lastName.trim() === '' || email.trim() === '' || phoneNumber.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+                alert('Please fill in all the required fields.');
+                return false;
+            }
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                passwordMatchError.style.display = 'block';
+                return false;
+            }
+
+            // If all validations pass, allow form submission
+            return true;
+        }
+
+    function addData(){
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var email = document.getElementById('email').value;
+        var phoneNumber = document.getElementById('phoneNumber').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+        localStorage.setItem("firstname",Firstname);
+        localStorage.setItem("lastname",lastName);
+        localStorage.setItem('user',email);
+        localStorage.setItem('usernum',phoneNumber);
+        localStorage.setItem('userpass',password);
+        localStorage.setItem('Conpass',confirmPassword);
+
+    }   
+
+    </script>
+</body>
+</html>

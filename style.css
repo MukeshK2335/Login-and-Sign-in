@@ -1,0 +1,105 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: aquamarine;
+    font-family:"Roboto";   
+}
+.loginbox{
+    width: 360px;
+    height: 300px;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 3px;
+    justify-content: center;
+    border: 1px solid black;
+    box-shadow:0 0 10px rgba(0, 0, 0, 2.1) ;
+}
+h1{
+    text-align: center;
+    padding-top: 15px;   
+}
+form{
+    width: 300px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form input{
+    width: 80%;
+    padding: 8px;
+    border: none;
+    border: 1px solid black ;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+button{
+    width: 35%;
+    margin-top: 20px;
+    margin-left: 25%;
+    color: black;
+    background-color: aquamarine;
+    font-size: 20px;
+    border: none;
+    border: 1px solid black;
+
+}
+.no-account {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #888;
+}
+.sign-box{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 3px;
+    justify-content: center;
+    border: 1px solid black;
+    box-shadow:0 0 10px rgba(0, 0, 0, 2.1) ;
+
+}
+.policy{
+       margin-top: 10px;
+}
+#Email-error,
+#Password-error {
+    display: none;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+#passwordMatchError {
+    display: none;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+
+.sign-box button:hover {
+    background: #45a049;
+}
+
+.Policy,
+.Log {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.Policy a,
+.Log a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.Policy a:hover,
+.Log a:hover {
+    text-decoration: underline;
+}
